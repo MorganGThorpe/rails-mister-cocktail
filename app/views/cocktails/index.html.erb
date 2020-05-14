@@ -1,0 +1,13 @@
+<h1>List of cocktails</h1>
+<div class="card-group">
+<% @cocktails.each do |cocktail| %>
+<div class="card m-4 rounded-10" style="width: 18rem;">
+  <img class="card-img-top  rounded" src="https://cdn2.theweek.co.uk/sites/theweek/files/styles/super_wide/public/2019/10/the_ivy_cropped.jpg?itok=QgSlU5y7" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <p class="card-text"><%= %></p>
+    <a href="#" class="btn btn-primary rounded">Go somewhere</a>
+  </div>
+</div>
+<% end %>
+</div>
