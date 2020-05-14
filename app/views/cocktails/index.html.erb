@@ -6,7 +6,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
     <p class="card-text"><%= %></p>
-    <a href="#" class="btn btn-primary rounded">Go somewhere</a>
+    <h2 class="btn "> <%= link_to "cocktail", cocktail_path(cocktail) %></h2>
   </div>
 </div>
 <% end %>

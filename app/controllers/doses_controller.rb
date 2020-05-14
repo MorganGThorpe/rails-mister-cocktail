@@ -25,6 +25,11 @@ def index
     @dose.update(params[dose_params])
     redirect_to cocktail_path(@dose)
   end
+  def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to cocktails.path
+  end
 
   private
 
