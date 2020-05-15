@@ -1,5 +1,7 @@
 class DosesController < ApplicationController
-def index
+  before_action :set_cocktail
+
+  def index
     @doses = Dose.all
   end
 
@@ -32,7 +34,9 @@ def index
   end
 
   private
-
+  def set_cocktail
+    @cocktails = Cocktail.find(params[:cocktail_id])
+  end
   def dose_params
     params.require(:dose).permit(:description, :ingredient, :cocktail)
   end
