@@ -2,12 +2,13 @@
 <div class="card-group">
 <% @cocktails.each do |cocktail| %>
 <div class="card m-4 rounded-10" style="width: 18rem;">
-  <img class="card-img-top  rounded" src="https://cdn2.theweek.co.uk/sites/theweek/files/styles/super_wide/public/2019/10/the_ivy_cropped.jpg?itok=QgSlU5y7" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%= cocktail.name %></h5>
+  <img class="img-fluid" src="https://cdn2.theweek.co.uk/sites/theweek/files/styles/super_wide/public/2019/10/the_ivy_cropped.jpg?itok=QgSlU5y7" alt="Card image cap">
+  <div class="card-img-overlay">
+    <h6 class="card-title text-white"><%= cocktail.name %></h6>
     <p class="card-text"><%= %></p>
     <h2 class="btn "> <%= link_to "cocktail", cocktail_path(cocktail) %></h2>
   </div>
 </div>
 <% end %>
 </div>
+
