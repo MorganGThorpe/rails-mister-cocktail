@@ -2,11 +2,21 @@
 
 <h1><%= @cocktail.name %></h1>
   <ul>
-  <%  @cocktail.doses.each do |dose|%>
-    <li>
-      <%= dose.description%>
-      <%= dose.ingredient.name %>
-    </li>
-  <% end %>
+    <%  @cocktail.doses.each do |dose|%>
+      <li>
+        <%= dose.description%>
+        <%= dose.ingredient.name %>
+      </li>
+    <% end %>
   </ul>
+
+  <h4>Add an ingredient to the cocktail</h4>
+  <%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.association :doses %>
+  <%= f.association :ingredients %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Home", cocktails_path  %>
 
