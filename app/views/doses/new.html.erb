@@ -1,1 +1,17 @@
-<h1>Add doses and ingredients to a cocktail</h1>
+<h1>Add or remove ingredients from <%= @cocktail.name %></h1>
+
+<ul>
+  <%  @cocktail.doses.each do |dose|%>
+    <li>
+      <%= dose.description%>
+      <%= dose.ingredient.name %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Add an ingredient</h3>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description, label: "Amount" %>
+  <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
